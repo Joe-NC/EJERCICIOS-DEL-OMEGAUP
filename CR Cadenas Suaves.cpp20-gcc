@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    /
+    string line;
+    while (getline(cin, line)) {
+        int frecuencia[26] = {0};
+        int maxFrecuencia = 0;
+
+        for (char c : line) {
+            if (isalpha(c)) {
+                frecuencia[c - 'a']++;
+                maxFrecuencia = max(maxFrecuencia, frecuencia[c - 'a']);
+            }
+        }
+        int segundos = line.length() - maxFrecuencia;
+
+        cout << segundos << endl;
+    }
+
+    return 0;
+}

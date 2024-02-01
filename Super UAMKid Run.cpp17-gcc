@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string nivel;
+    getline(cin, nivel);
+
+    int saltos = 0;
+    int pos = 0;
+
+    while (pos < nivel.size() - 1) {
+        int saltoMaximo = min(5, static_cast<int>(nivel.size()) - pos - 1);
+
+        for (int salto = saltoMaximo; salto > 0; --salto) {
+            if (nivel[pos + salto] == ' ') {
+                pos += salto;
+                break;
+            }
+        }
+
+        ++saltos;
+    }
+
+    cout << saltos << endl;
+
+    return 0;
+}

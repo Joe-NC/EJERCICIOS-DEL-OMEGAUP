@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    long long sumaTotal = 0;
+
+    for (int i = 1; i <= n; ++i) {
+        long long sumaRango = 0;
+
+        // Sumar desde i hasta 2 * i - 1
+        for (int j = i; j <= 2 * i - 1; ++j) {
+            sumaRango += j;
+        }
+
+        sumaTotal += sumaRango;
+    }
+
+    cout << sumaTotal << endl;
+
+    return 0;
+}

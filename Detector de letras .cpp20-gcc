@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cctype>
+
+using namespace std;
+
+char determinarLetra(char c) {
+    if (isupper(c)) {
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            return 'V';
+        } else if (c == 'Y') {
+            return 'S';
+        } else {
+            return 'C';
+        }
+    } else {
+        return '\0';
+    }
+}
+
+void leerLetrasMayusculas() {
+    int letrasLeidas = 0;
+    char c;
+
+    while (letrasLeidas < 10) {
+        cout << "Ingrese un carácter mayúscula: ";
+        cin >> c;
+
+        char resultado = determinarLetra(c);
+
+        if (resultado != '\0') {
+            cout << "La letra correspondiente es: " << resultado << endl;
+            letrasLeidas++;
+        } else {
+            cout << "Carácter no válido. Inténtelo de nuevo." << endl;
+        }
+    }
+}
+
+int main() {
+    leerLetrasMayusculas();
+    return 0;
+}

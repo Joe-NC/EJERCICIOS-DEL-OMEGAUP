@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+
+    int n;
+    std::cout << "Ingrese el número n: ";
+    std::cin >> n;
+
+    std::vector<int> lista(n);
+    std::cout << "Ingrese la lista de valores numéricos de tamaño " << n << ":" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> lista[i];
+    }
+
+    if (lista.size() != n) {
+        std::cerr << "Error: La cantidad de elementos en la lista no es igual a n." << std::endl;
+        return 1;
+    }
+
+    int resultado = 0;
+    for (int i = 0; i < n - 1; ++i) {
+        resultado += lista[i] * lista[i + 1];
+    }
+
+    std::cout << "La suma de la multiplicación de cada pareja de datos es: " << resultado << std::endl;
+
+    return 0;
+}

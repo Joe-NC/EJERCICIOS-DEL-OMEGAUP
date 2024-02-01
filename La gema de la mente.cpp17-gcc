@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int N, K;
+    vector<int> densidades;
+
+    cin >> N;
+
+    for (int i = 0; i < N; ++i) {
+        int densidad;
+        cin >> densidad;
+        densidades.push_back(densidad);
+    }
+    cin >> K;
+    vector<int> candidatos;
+    for (int i = 0; i < N; ++i) {
+        if (densidades[i] >= K - 3 && densidades[i] <= K + 3) {
+            candidatos.push_back(densidades[i]);
+        }
+    }
+    for (int i = 0; i < candidatos.size(); ++i) {
+        cout << candidatos[i] << " ";
+    }
+
+    return 0;
+}

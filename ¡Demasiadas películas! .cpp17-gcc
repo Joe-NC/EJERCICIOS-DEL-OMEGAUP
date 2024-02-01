@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int minutosDisponibles, numeroPeliculas;
+    cin >> minutosDisponibles >> numeroPeliculas;
+
+    vector<int> duracionPeliculas(numeroPeliculas);
+
+    for (int i = 0; i < numeroPeliculas; ++i) {
+        cin >> duracionPeliculas[i];
+    }
+
+    int totalDuracion = 0;
+    int peliculasVistas = 0;
+
+    for (int i = 0; i < numeroPeliculas; ++i) {
+        totalDuracion += duracionPeliculas[i];
+
+        if (totalDuracion <= minutosDisponibles) {
+            peliculasVistas++;
+        } else {
+            break; // Interrumpimos si ya no hay tiempo suficiente para la siguiente película
+        }
+    }
+
+    cout << peliculasVistas << endl;
+
+    return 0;
+}

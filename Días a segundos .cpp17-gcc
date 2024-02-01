@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+
+    int dias;
+
+    cout << "Ingrese la cantidad de días: ";
+    cin >> dias;
+
+    long long segundos = static_cast<long long>(dias) * 24 * 60 * 60;
+
+    cout << "El número de segundos en " << dias << " días es: " << segundos << endl;
+
+    return 0;
+}

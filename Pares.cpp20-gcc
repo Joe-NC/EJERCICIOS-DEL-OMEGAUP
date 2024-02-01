@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+
+    int N;
+    cout << "Ingrese el tamaño del arreglo: ";
+    cin >> N;
+
+    vector<int> arreglo(N);
+
+    cout << "Ingrese los elementos del arreglo separados por espacios: ";
+    for (int i = 0; i < N; ++i) {
+        cin >> arreglo[i];
+    }
+
+    vector<int> numerosPares;
+
+    for (int i = 0; i < N; ++i) {
+        if (arreglo[i] % 2 == 0) {
+            numerosPares.push_back(arreglo[i]);
+        }
+    }
+
+    if (numerosPares.empty()) {
+        cout << ":(" << std::endl;
+    } else {
+        cout << "[";
+        for (size_t i = 0; i < numerosPares.size(); ++i) {
+            cout << numerosPares[i];
+            if (i < numerosPares.size() - 1) {
+                cout << " ";
+            }
+        }
+        cout << "]" << endl;
+    }
+
+    return 0;
+}

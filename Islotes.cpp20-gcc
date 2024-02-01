@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int contarIslotes(const string& palabra) {
+    int contadorIslotes = 0;
+
+    for (int i = 1; i < palabra.length() - 1; ++i) {
+
+        if (palabra[i] == palabra[i - 1] && palabra[i] != palabra[i + 1]) {
+            ++contadorIslotes;
+        }
+    }
+
+    return contadorIslotes;
+}
+
+int main() {
+
+    string palabra;
+    cout << "Ingrese una palabra: ";
+    cin >> palabra;
+
+    int resultado = contarIslotes(palabra);
+    cout << "El número de islotes es: " << resultado << endl;
+
+    return 0;
+}

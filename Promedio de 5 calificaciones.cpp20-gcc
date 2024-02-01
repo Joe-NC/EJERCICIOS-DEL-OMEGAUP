@@ -1,0 +1,18 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    
+    int calificacion1, calificacion2, calificacion3, calificacion4, calificacion5;
+    
+    cin >> calificacion1;
+    cin >> calificacion2;
+    cin >> calificacion3;
+    cin >> calificacion4;
+    cin >> calificacion5;
+    double promedio = (calificacion1 + calificacion2 + calificacion3 + calificacion4 + calificacion5) / 5.0;
+    cout << fixed << setprecision(1) << promedio << endl;
+
+    return 0;
+}

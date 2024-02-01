@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int horaInicio, horaTermino;
+    cin >> horaInicio;
+    cin >> horaTermino;
+    int duracion;
+    if (horaTermino >= horaInicio) {
+        duracion = horaTermino - horaInicio;
+    } else {
+        duracion = 24 - horaInicio + horaTermino;
+    }
+    cout << duracion << endl;
+    return 0;
+}

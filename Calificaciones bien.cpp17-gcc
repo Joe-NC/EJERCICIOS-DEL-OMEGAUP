@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    for (int i = 0; i < N; ++i) {
+        double calificacionReal;
+        cin >> calificacionReal;
+
+        double calificacion0 = floor(calificacionReal);
+        double calificacion5 = floor(calificacionReal + 0.5);
+        double calificacion6 = ceil(calificacionReal - 0.5);
+        double calificacion7 = ceil(calificacionReal);
+
+        double calificacionAsignada;
+        double minDiferencia = abs(calificacionReal - calificacion0);
+
+        if (abs(calificacionReal - calificacion5) < minDiferencia) {
+            calificacionAsignada = calificacion5;
+            minDiferencia = abs(calificacionReal - calificacion5);
+        }
+
+        if (abs(calificacionReal - calificacion6) < minDiferencia) {
+            calificacionAsignada = calificacion6;
+            minDiferencia = abs(calificacionReal - calificacion6);
+        }
+
+        if (abs(calificacionReal - calificacion7) < minDiferencia) {
+            calificacionAsignada = calificacion7;
+        }
+
+        cout << calificacionAsignada << endl;
+    }
+
+    return 0;

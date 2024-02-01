@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int menor, mayor;
+
+    menor = mayor = a;
+
+    if (b < menor) {
+        menor = b;
+    }
+
+    if (c < menor) {
+        menor = c;
+    }
+
+    if (b > mayor) {
+        mayor = b;
+    }
+
+    if (c > mayor) {
+        mayor = c;
+    }
+
+    cout << menor << " " << mayor << endl;
+
+    return 0;
+}

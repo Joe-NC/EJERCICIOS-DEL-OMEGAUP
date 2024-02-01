@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    // Calcular la suma de los cuadrados de los números en el rango [a, b]
+    int sumaCuadrados = 0;
+    for (int i = a; i <= b; ++i) {
+        sumaCuadrados += i * i;
+    }
+
+    cout << sumaCuadrados << endl;
+
+    return 0;
+}

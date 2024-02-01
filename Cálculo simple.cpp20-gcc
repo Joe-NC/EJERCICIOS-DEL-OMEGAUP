@@ -1,0 +1,16 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int codigoProducto1, cantidadProducto1;
+    double precioUnitarioProducto1;
+    int codigoProducto2, cantidadProducto2;
+    double precioUnitarioProducto2;
+    cin >> codigoProducto1 >> cantidadProducto1 >> precioUnitarioProducto1;
+    cin >> codigoProducto2 >> cantidadProducto2 >> precioUnitarioProducto2;
+    double totalPagar = (cantidadProducto1 * precioUnitarioProducto1) + (cantidadProducto2 * precioUnitarioProducto2);
+    cout << fixed << setprecision(2) << totalPagar << endl;
+
+    return 0;
+}

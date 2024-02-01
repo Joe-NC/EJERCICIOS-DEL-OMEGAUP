@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    int suma = 0;
+
+    do {
+        cin >> numero;
+        suma += numero;
+    } while (numero != 0);
+    cout << suma << endl;
+
+    return 0;
+}

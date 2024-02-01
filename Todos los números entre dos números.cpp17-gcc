@@ -1,0 +1,39 @@
+8139. Todos los números entre dos números  
+Puntos	12.52	Límite de memoria	32 MiB
+Límite de tiempo (caso)	1s	Límite de tiempo (total)	1m0s
+Tamaño límite de entrada (bytes)	10 KiB		
+Descripción
+Realiza un programa que solicite al usuario dos números � y �; y que imprima los números pares e impares que existen entre dichos números de acuerdo a las condiciones marcadas a continuación.
+Entrada
+Dos números enteros �1 y �2.
+Salida
+Si la entrada �1 fue par, entonces imprimir todos los números impares entre �1 y �2 (con un espacio entre cada número). Nota, el cero es considerado número par. Si la entrada �1 fue impar, entonces imprimir todos los números pares entre �1 y �2 (con un espacio entre cada número).
+Salida con errores
+Si �1 ó �2 es negativo imprimir "Error". Si �1 >= �2 imprimir "Error".
+#include <iostream>
+
+int main() {
+    int numero1, numero2;
+    std::cin >> numero1 >> numero2;
+
+    // Validar condiciones
+    if (numero1 < 0 || numero2 < 0 || numero1 >= numero2) {
+        std::cout << "Error" << std::endl;
+        return 0;
+    }
+
+    // Imprimir números pares o impares según la paridad de numero1
+    if (numero1 % 2 == 0) {
+        // Si numero1 es par, imprimir números impares
+        for (int i = numero1 + 1; i < numero2; i += 2) {
+            std::cout << i << " ";
+        }
+    } else {
+        // Si numero1 es impar, imprimir números pares
+        for (int i = numero1 + 2; i < numero2; i += 2) {
+            std::cout << i << " ";
+        }
+    }
+
+return 0;
+}

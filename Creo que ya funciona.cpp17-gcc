@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <bitset>
+
+using namespace std;
+
+bool esBinario(const string& mensaje) {
+    for (char c : mensaje) {
+        if (c != '0' && c != '1') {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string mensaje;
+    getline(cin, mensaje);
+
+    if (esBinario(mensaje)) {
+        cout << mensaje << endl;
+    } else {
+        cout << "10101" << endl;
+    }
+
+    return 0;
+}

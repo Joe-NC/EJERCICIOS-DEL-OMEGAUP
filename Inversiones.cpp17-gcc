@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+
+    double montoInvertido, tasa1, tasa2, tasa3, porcentajeBanco;
+    cout << "Ingrese el monto invertido: ";
+    cin >> montoInvertido;
+    cout << "Ingrese las tasas de interés para los tres tipos de inversión: ";
+    cin >> tasa1 >> tasa2 >> tasa3;
+    cout << "Ingrese el porcentaje de ganancias que recibe el banco: ";
+    cin >> porcentajeBanco;
+
+    double inversion1 = montoInvertido * (1 + tasa1);
+    double inversion2 = montoInvertido * (1 + tasa2);
+    double inversion3 = montoInvertido * (1 + tasa3);
+
+    double totalDespuesDeUnAnio = inversion1 + inversion2 + inversion3;
+    double gananciasBanco = totalDespuesDeUnAnio * porcentajeBanco;
+    totalDespuesDeUnAnio -= gananciasBanco;
+
+    cout << std::fixed;
+    cout.precision(3);
+    cout << "El total después de un año es: " << totalDespuesDeUnAnio << endl;
+
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <iostream>
+#include <unordered_set>
+
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    unordered_set<int> numeros;
+
+    if (numeros.count(a) || numeros.count(b) || numeros.count(c)) {
+        cout << "Sí" << endl;
+    } else {
+        numeros.insert(a);
+        numeros.insert(b);
+        numeros.insert(c);
+        cout << "No" << endl;
+    }
+
+    return 0;
+}

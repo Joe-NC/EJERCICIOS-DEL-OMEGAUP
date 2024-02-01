@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    vector<int> conjunto1(N);
+    vector<int> conjunto2(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> conjunto1[i];
+    }
+    for (int i = 0; i < N; ++i) {
+        cin >> conjunto2[i];
+        conjunto1[i] += conjunto2[i];
+    }
+    for (int i = 0; i < N; ++i) {
+        cout << conjunto1[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}

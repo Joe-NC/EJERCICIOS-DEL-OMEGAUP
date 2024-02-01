@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Pan {
+    char tipo;
+    int tamano;
+};
+bool compararPanes(const Pan& pan1, const Pan& pan2) {
+    if (pan1.tipo == pan2.tipo) {
+        return pan1.tamano > pan2.tamano;
+    } else {
+        return pan1.tipo == 'e';
+    }
+}
+
+int main() {
+    int N;
+    cin >> N;
+    vector<Pan> panaderia(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> panaderia[i].tipo >> panaderia[i].tamano;
+    }
+    sort(panaderia.begin(), panaderia.end(), compararPanes);
+
+    for (int i = 0; i < N; ++i) {
+        if (panaderia[i].tipo == 'e') {
+            cout << panaderia[i].tipo << " " << panaderia[i].tamano << "\n";
+            return 0;
+        }
+    }
+    for (int i = 0; i < N; ++i) {
+        if (panaderia[i].tipo == 't') {
+            std::cout << panaderia[i].tipo << " " << panaderia[i].tamano << "\n";
+            return 0;
+        }
+    }
+
+    cout << "No hay panes disponibles\n";
+    return 0;
+}

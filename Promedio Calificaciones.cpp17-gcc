@@ -1,0 +1,23 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main(){
+  float not1, not2, not3, not4, not5, not6, not7, promedios;
+  cout<<"Digite una nota: ";
+  cin>>not1;
+  cout<<"Digite una nota: ";
+  cin>>not2;
+  cout<<"Digite una nota: ";
+  cin>>not3;
+  cout<<"Digite una nota: ";
+  cin>>not4;
+  cout<<"Digite una nota: ";
+  cin>>not5;
+  cout<<"Digite una nota: ";
+  cin>>not6;
+  cout<<"Digite una nota: ";
+  cin>>not7;
+  promedio=(not1+not2+not3+not4+not5+not6+not7)/7;
+  cout<<"\n El resultado de promedio es: "<<fixed<<setprecision(1)<<promedio<<endl;
+  return 0;
+}

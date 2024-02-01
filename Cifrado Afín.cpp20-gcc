@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int modulo(int a, int b) {
+    int result = a % b;
+    return result >= 0 ? result : result + b;
+}
+char cifrarCaracter(char letra, int a, int b) {
+    if (isalpha(letra)) {
+        char base = isupper(letra) ? 'A' : 'a';
+        int valorOriginal = letra - base;
+        int valorCifrado = modulo((a * valorOriginal + b), 26);
+        return base + valorCifrado;
+    } else {
+        return letra;
+    }
+}
+string cifrarMensaje(const string& mensaje, int a, int b) {
+    string mensajeCifrado = "";
+    for (char c : mensaje) {
+        mensajeCifrado += cifrarCaracter(c, a, b);
+    }
+    return mensajeCifrado;
+}
+int main() {
+    int a, b;
+    cin >> a >> b;
+    string mensaje;
+    cin.ignore();
+    getline(cin, mensaje);
+    string mensajeCifrado = cifrarMensaje(mensaje, a, b);
+    cout << mensajeCifrado << endl;
+
+    return 0;
+}

@@ -1,0 +1,50 @@
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
+int main() {
+
+    int precios[4][4];
+
+    cout << "Ingrese los precios de los platos por vajilla (A, B, C, D):" << endl;
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            cin >> precios[i][j];
+        }
+    }
+
+    int N;
+    cout << "Ingrese el número de platos rotos (N): ";
+    cin >> N;
+
+    vector<string> platos_rotos(N);
+    cout << "Ingrese los platos rotos (por ejemplo, A1, B2, C3, D4):" << endl;
+    for (int i = 0; i < N; ++i) {
+        cin >> platos_rotos[i];
+    }
+
+    int descuento_total = 0;
+    for (const string& plato_roto : platos_rotos) {
+
+        char vajilla = plato_roto[0];
+        int tamano = plato_roto[1] - '0';
+
+        int precio_plato_roto = precios[vajilla - 'A'][tamano - 1];
+
+        descuento_total += precio_plato_roto;
+    }
+
+    for (int i = 0; i < 4; ++i) {
+        int precio_total_vajilla = 0;
+        for (int j = 0; j < 4; ++j) {
+            precio_total_vajilla += precios[i][j];
+        }
+        descuento_total -= 10;
+    }
+
+    cout << "El descuento total es: " << descuento_total << " dólares." << endl;
+
+    return 0;
+}

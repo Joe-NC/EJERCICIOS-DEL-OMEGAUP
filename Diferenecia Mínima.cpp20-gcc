@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> elementos(N);
+
+    for (int i = 0; i < N; ++i) {
+        cin >> elementos[i];
+    }
+    sort(elementos.begin(), elementos.end());
+    int diferenciaMinima = elementos[1] - elementos[0];
+    for (int i = 2; i < N; ++i) {
+        int diferenciaActual = elementos[i] - elementos[i - 1];
+        diferenciaMinima = min(diferenciaMinima, diferenciaActual);
+    }
+    cout << diferenciaMinima << endl;
+    return 0;
+}

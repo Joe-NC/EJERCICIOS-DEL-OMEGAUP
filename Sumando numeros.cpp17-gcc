@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    int suma_pares = 0, suma_impares = 0;
+    for (int i = 0; i < N; ++i) {
+        int numero;
+        cin >> numero;
+        if (numero % 2 == 0) {
+            suma_pares += numero;
+        } else {
+            suma_impares += numero;
+        }
+    }
+    cout << suma_pares << " " << suma_impares << endl;
+    return 0;
+}

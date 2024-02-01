@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int numero;
+    cin >> numero;
+
+    int resultado = (numero * numero * numero) / 2;
+
+    cout << resultado << endl;
+
+    return 0;
+}

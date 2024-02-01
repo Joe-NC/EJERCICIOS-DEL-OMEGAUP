@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string mensaje;
+    getline(cin, mensaje);
+
+    int contadorAsteriscos = 0;
+
+    for (char caracter : mensaje) {
+        if (caracter == '*') {
+            contadorAsteriscos++;
+        }
+    }
+
+    if (contadorAsteriscos == 0 || contadorAsteriscos == 1) {
+        cout << "BIEN" << endl;
+    } else if (contadorAsteriscos == 2) {
+        cout << "HAPPY" << endl;
+    } else {
+        cout << "BUSCAR A TAVO" << endl;
+    }
+
+    return 0;
+}

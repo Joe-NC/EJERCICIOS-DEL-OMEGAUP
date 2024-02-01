@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    int conteo_mayor_170 = 0;
+    for (int i = 0; i < N; ++i) {
+        double estatura;
+        cin >> estatura;
+        if (estatura > 1.70) {
+            conteo_mayor_170++;
+        }
+    }
+    cout << conteo_mayor_170 << endl;
+    return 0;
+}

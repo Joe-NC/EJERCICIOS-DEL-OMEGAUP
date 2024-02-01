@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int cargadoresPerdidos, valorMoneda, aumentoCoraje, aumentoRemordimiento;
+    cin >> cargadoresPerdidos >> valorMoneda >> aumentoCoraje >> aumentoRemordimiento;
+
+    int deudaInicial = cargadoresPerdidos * valorMoneda;
+
+    int minSentimiento = min(aumentoCoraje, aumentoRemordimiento);
+
+    int mejorDeuda = deudaInicial;
+    int mejorSentimiento = 0;
+
+    for (int i = 0; i <= cargadoresPerdidos; i++) {
+        int nuevaDeuda = i * valorMoneda;
+        int nuevoSentimiento = (cargadoresPerdidos - i) * minSentimiento;
+
+        if (nuevaDeuda + nuevoSentimiento < mejorDeuda + mejorSentimiento) {
+            mejorDeuda = nuevaDeuda;
+            mejorSentimiento = nuevoSentimiento;
+        }
+    }
+
+    cout << mejorDeuda + mejorSentimiento << endl;
+
+    return 0;
+}

@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n1, n2, n3, n4, n5, n6;
+    cin >> n1 >> n2 >> n3 >> n4 >> n5 >> n6;
+    int precioManzana = 15;
+    int precioLimon = 20;
+    int precioZanahoria = 19;
+    int precioBrocoli = 10;
+    int precioPepino = 10;
+    int precioCilantro = 5;
+    int total = n1 * precioManzana + n2 * precioLimon + n3 * precioZanahoria +
+                n4 * precioBrocoli + n5 * precioPepino + n6 * precioCilantro;
+    cout << total << endl;
+
+    return 0;
+}
